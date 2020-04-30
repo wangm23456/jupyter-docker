@@ -1,0 +1,26 @@
+version: "3"
+services:
+    datascience-notebook:
+        # build:
+        #     context: .
+        #     dockerfile: Dockerfile
+        image: wangm/datasci-lab-base:v0.1
+        container_name: jupyter_lab
+        env_file:
+            - .env
+        volumes:
+            - ${LOCAL_WORKING_DIR}:/data
+        ports:
+            - ${PORT}:${PORT}
+        user: root
+        environment:
+            JUPYTER_ENABLE_LAB: ${JUPYTER_ENABLE_LAB}
+        command: "jupyter lab \
+            --NotebookApp.port=${PORT} \
+            --NotebookApp.password=${ACCESS_TOKEN} \
+            --NotebookApp.open_browser=False \
+            --NotebookApp.notebook_dir='/data' \
+            --NotebookApp.allow_root=True \
+            --NotebookApp.ip='0.0.0.0' \
+            --NotebookApp.contents_manager_class='jupytext.TextFileContentsManager' \
+            --ContentsManager.default_jupytext_formats='ipynb,py:light'"

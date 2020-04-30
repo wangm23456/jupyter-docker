@@ -1,0 +1,8 @@
+c.NotebookApp.port = 28888
+c.NotebookApp.open_browser = False
+c.NotebookApp.notebook_dir = '/data/'
+c.NotebookApp.allow_root = True
+c.NotebookApp.ip="0.0.0.0"
+c.NotebookApp.password = $ACCESS_TOKEN
+c.NotebookApp.contents_manager_class = "jupytext.TextFileContentsManager"
+c.ContentsManager.default_jupytext_formats = "ipynb,py:light"

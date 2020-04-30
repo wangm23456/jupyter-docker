@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jupyterlab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #   args:
+        # USER_ID: 1000
+        # GROUP_ID: 1000
+    volumes:
+      - /home/wangm/jupyter:/data
+    ports:
+      - 28888:28888
+    # user:
+    #   - wangm
