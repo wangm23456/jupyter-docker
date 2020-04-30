@@ -24,6 +24,7 @@ note: in my case, I use the "namespace" to share the volume between host and con
 
 ```shell
 cd datasci
+docker build . -t wangm/datasci-lab-base:v0.1
 docker-compose -f "docker-compose.yml" up -d
 ```
 

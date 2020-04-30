@@ -27,6 +27,8 @@ RUN conda update --all --yes
 
 RUN mkdir /data
 
+# other opts for R/julia etc.
+
 # RUN conda install --yes --file requirements.txt
 
 CMD [ "/bin/bash" ]
